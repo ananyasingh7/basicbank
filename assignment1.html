@@ -1,0 +1,84 @@
+<!DOCTYPE html> <meta charset="utf-8">
+<style>
+	div { display : none ; border: 1px dashed red; }
+        #field {width:40%; margin: auto; vertical-align: center;border-radius: 20px;}
+        select{
+            margin: auto;
+            width: auto;
+        }
+
+        form{
+            margin: auto;
+            width: auto;
+        }
+
+
+
+</style>
+
+<fieldset id = "field">
+<form action= "assignment1.php" id = "Form" method="get">
+<b>UCID:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = text name="ucid" required id="ucid" autocomplete = "off" placeholder="Required" ><br><br>
+<b>Password:</b>&nbsp;&nbsp;<input type = text name="pass" required id="pass" autocomplete = "off" placeholder="Required" ><br><br>
+<b>Account:</b>&nbsp;&nbsp;<input type = text name="account" required id="account" autocomplete = "off"><br><br>
+<b>Service:</b>
+<!-- <input type = text name="Z" required id="Z" autocomplete = "off" placeholder="Required" >Account<br><br> -->
+
+
+
+
+<select name = "choice" id = "choice" onchange=F() >
+	<option value=""> Choose  </option>
+	<option value="d" > Display </option>
+    <option value="t" > Transact </option>
+</select>
+
+<div id="A">
+Number for display: <input type = text name="number" placeholder="3" >
+<input type=checkbox name="all">Check to list all accounts<br><br>
+</div>
+
+<div id="B">
+Amount for transaction: <input type = text name="amount" placeholder="0.00" ><br><br>
+</div>
+
+<input type=checkbox name="mailer">Email recipts<br><br>
+<input type = submit value="Submit Request">
+</form>
+
+
+</fieldset>
+
+<script>
+
+"use strict";
+var choice = document.getElementById("choice")
+
+var ptrA = document.getElementById("A")
+var ptrB = document.getElementById("B")
+ptrf.addEventListener ( "submit", F )
+var v1, v2
+
+
+function F () {
+	
+  if (choice.value=="t") {
+		ptrA.style.display='none'
+		ptrB.style.display='block'
+	}
+
+	else if (choice.value=="d") {
+		ptrB.style.display='none'
+		ptrA.style.display='block'
+	}
+
+	else{
+		ptrA.style.display='none'
+		ptrB.style.display='none'
+	}
+	
+
+}
+
+
+</script>
